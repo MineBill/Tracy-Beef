@@ -74,13 +74,13 @@ public static class Tracy
 	public static void EmitMessage(StringView text, int32 callstack) => _EmitMessage(text.Ptr, (.)text.Length, callstack);
 
 	[LinkName("___tracy_emit_frame_mark")]
-	public static extern void EmitFrameMark(CString text);
+	public static extern void FrameMark(CString text = null);
 
 	[LinkName("___tracy_emit_frame_mark_start")]
-	public static extern void EmitFrameMarkStart(CString text);
+	public static extern void FrameMarkStart(CString text);
 
 	[LinkName("___tracy_emit_frame_mark_end")]
-	public static extern void EmitFrameMarkEnd(CString text);
+	public static extern void FrameMarkEnd(CString text);
 
 	[LinkName("___tracy_connected")]
 	public static extern Bool32 Connected();
