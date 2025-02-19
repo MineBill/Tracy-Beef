@@ -15,5 +15,8 @@ LibPaths = ["$(ProjectDir)/dist/$(Configuration)-$(Platform)/TracyClient.lib"]
 [Configs.Debug.Linux64]
 LibPaths = ["$(ProjectDir)/dist/$(Configuration)-$(Platform)/libTracyClientd.a"]
 
+[Configs.Release.Win64]
+LibPaths = ["$(ProjectDir)/dist/$(Configuration)-$(Platform)/TracyClient.lib"]
+
 [Configs.Release.Linux64]
 LibPaths = ["$(ProjectDir)/dist/$(Configuration)-$(Platform)/libTracyClient.a"]

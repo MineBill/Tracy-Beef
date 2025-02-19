@@ -7,7 +7,7 @@ public class Zone
 
 	public this(bool active, int depth, String fileName = Compiler.CallerFileName, int line = Compiler.CallerLineNum, String func = Compiler.CallerMemberName)
 	{
-		var id = Tracy.AllocSrcLoc((.)line, fileName, func);
+		var id = Tracy.AllocSrcLoc((.)line, fileName, func, 0);
 #if TRACY_NO_CALLSTACK
 		m_Ctx = Tracy.EmitZoneBeginAlloc(id, active);
 #else

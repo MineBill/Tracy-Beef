@@ -25,7 +25,7 @@ struct CZoneContext
 [CRepr]
 struct Bool32
 {
-	public uint32 m_Value;
+	public int32 m_Value;
 
 	public static operator bool(Self self) => self.m_Value == 1;
 	public static operator Self(bool value) => .() { m_Value = value ? 1 : 0 };
@@ -37,8 +37,8 @@ public static class Tracy
 	public static extern void SetThreadName(CString name);
 
 	[LinkName("___tracy_alloc_srcloc")]
-	private static extern uint64 _AllocSrcLoc(uint32 line, CString source, c_size sourceSz, CString @function, c_size functionSz);
-	public static uint64 AllocSrcLoc(uint32 line, StringView source, StringView @function) => _AllocSrcLoc(line, source.Ptr, (.)source.Length, @function.Ptr, (.)@function.Length);
+	private static extern uint64 _AllocSrcLoc(uint32 line, CString source, c_size sourceSz, CString @function, c_size functionSz, uint32 color);
+	public static uint64 AllocSrcLoc(uint32 line, StringView source, StringView @function, uint32 color) => _AllocSrcLoc(line, source.Ptr, (.)source.Length, @function.Ptr, (.)@function.Length, color);
 
 	[LinkName("___tracy_emit_zone_begin")]
 	public static extern CZoneContext EmitZoneBegin(SourceLocationData* srcLoc, Bool32 active);
@@ -87,6 +87,7 @@ public static class Tracy
 
 	public const int DefaultStackDepth = 5;
 
+#region Mixins
 	// Emit a zone
 	public static mixin Zone(bool active = true, int depth = Tracy.DefaultStackDepth)
 	{
@@ -137,4 +138,5 @@ public static class Tracy
 	{
 		scope:mixin Zone(active, depth)..Name(name)..Color(color);
 	}
+#endregion
 }
