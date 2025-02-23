@@ -6,7 +6,6 @@ TargetType = "BeefLib"
 StartupObject = "Tracy.Program"
 
 [Configs.Debug.Win64]
-OtherLinkFlags = "$(LinkFlags) /NODEFAULTLIB:libcmt"
 LibPaths = ["$(ProjectDir)/dist/$(Configuration)-$(Platform)/TracyClientd.lib"]
 
 [Configs.Release.Win64]
