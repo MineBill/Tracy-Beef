@@ -1,0 +1,5 @@
+FileVersion = 1
+Projects = {Setup = {Path = "."}, BeefLibSetupHelper = {Path = "../../../../BeefLibSetupHelper"}}
+
+[Workspace]
+StartupProject = "Setup"

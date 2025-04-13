@@ -1,0 +1,21 @@
+FileVersion = 1
+
+[Project]
+Name = "Tracy"
+TargetType = "BeefLib"
+StartupObject = "Tracy.Program"
+
+[Configs.Debug.Win64]
+LibPaths = ["$(ProjectDir)/dist/$(Configuration)-$(Platform)/TracyClientd.lib"]
+
+[Configs.Release.Win64]
+LibPaths = ["$(ProjectDir)/dist/$(Configuration)-$(Platform)/TracyClient.lib"]
+
+[Configs.Debug.Linux64]
+LibPaths = ["$(ProjectDir)/dist/$(Configuration)-$(Platform)/libTracyClientd.a"]
+
+[Configs.Release.Win64]
+LibPaths = ["$(ProjectDir)/dist/$(Configuration)-$(Platform)/TracyClient.lib"]
+
+[Configs.Release.Linux64]
+LibPaths = ["$(ProjectDir)/dist/$(Configuration)-$(Platform)/libTracyClient.a"]

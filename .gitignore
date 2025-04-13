@@ -1,0 +1,5 @@
+/cmake-build/
+dist/
+recovery/
+build/
+**/BeefSpace_User.toml
