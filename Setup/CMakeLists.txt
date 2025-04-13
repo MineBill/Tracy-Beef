@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.20)
 project("Tracy-Native")
 
-include(BeefLibProjectHelper/Helper.cmake)
+include(BeefLibSetupHelper/Helper.cmake)
 include(FetchContent)
 
 SetOption(TRACY_ON_DEMAND ON)

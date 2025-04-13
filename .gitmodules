@@ -1,0 +1,3 @@
+[submodule "Setup/BeefLibSetupHelper"]
+	path = Setup/BeefLibSetupHelper
+	url = https://github.com/MineBill/BeefLibSetupHelper
